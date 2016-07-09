@@ -26,6 +26,8 @@ var data = [
     }
     ];
 
+    mongoose.connect(env.databaseUrl);
+
     User.remove().then(function(){
        User.create(data).then(function(){
          console.log("Done");
