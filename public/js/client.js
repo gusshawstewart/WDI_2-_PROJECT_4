@@ -13,6 +13,9 @@ angular
 .controller("usersIndexController", usersIndexCtrl)
 .controller("registerController", registerCtrl)
 .controller("loginController", loginCtrl)
+.controller("profileController", profileCtrl)
+.controller("transcribeController", transcribeCtrl)
+.controller("wallController", wallCtrl)
 .controller("mainController", mainCtrl);
 
 setUpInterceptor.$inject = ["$httpProvider"];
@@ -46,7 +49,27 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl:  "/html/users/index.html",
     controller:   "usersIndexController",
     controllerAs: "usersIndex"
-  });
+  })
+  .state("profile", {
+    url: "/profile",
+    templateUrl:  "/html/profile.html",
+    controller:   "profileController",
+    controllerAs: "profile"
+  })
+  .state("wall", {
+    url: "/wall",
+    templateUrl:  "/html/wall.html",
+    controller:   "wallController",
+    controllerAs: "wall"
+  })
+  .state("transcribe", {
+    url: "/transcribe",
+    templateUrl:  "/html/transcribe.html",
+    controller:   "transcribeController",
+    controllerAs: "transcribe"
+  })
+
+  ;
 
   $urlRouterProvider.otherwise("/");
 }
@@ -137,6 +160,30 @@ function userFactory($resource){
 
 usersIndexCtrl.$inject = ["User"];
 function usersIndexCtrl(User){
+  var vm   = this;
+  User.query(function(data){
+    vm.users = data.users;
+  });
+}
+
+profileCtrl.$inject = ["User"];
+function profileCtrl(User){
+  var vm   = this;
+  User.query(function(data){
+    vm.users = data.users;
+  });
+}
+
+wallCtrl.$inject = ["User"];
+function wallCtrl(User){
+  var vm   = this;
+  User.query(function(data){
+    vm.users = data.users;
+  });
+}
+
+transcribeCtrl.$inject = ["User"];
+function transcribeCtrl(User){
   var vm   = this;
   User.query(function(data){
     vm.users = data.users;

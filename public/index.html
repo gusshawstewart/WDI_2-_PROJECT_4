@@ -2,7 +2,7 @@
 <html data-ng-app="transcriberApp">
   <head>
     <meta charset="utf-8">
-    <title>Day with Alex</title>
+    <title>Transcriber App</title>
     <link rel="stylesheet" href="/css/app.css" charset="utf-8">
     <base href="/" />
   </head>
@@ -13,7 +13,9 @@
           <li> <a data-ui-sref="home">Home</a></li>
           <li data-ng-hide="main.user"><a data-ui-sref="register">Register</a></li>
           <li data-ng-hide="main.user"><a data-ui-sref="login">Login</a></li>
-          <li data-ng-show="main.user"><a data-ui-sref="usersIndex">Users</a></li>
+          <li data-ng-show="main.user"><a data-ui-sref="profile">Profile</a></li>
+          <li data-ng-show="main.user"><a data-ui-sref="wall">Wall</a></li>
+          <li data-ng-show="main.user"><a data-ui-sref="transcribe">Transcribes</a></li>
           <li data-ng-show="main.user"><a  ng-href="#" data-ng-click="main.logout()">Logout</a></li>
         </ul>
       </nav>

@@ -9,8 +9,6 @@ var expressJWT   = require("express-jwt");
 
 require("./config/passport")(passport);
 
-
-
 var User         = require("./models/user");
 // middleware is like pass-the-parcel!
 app.use(express.static(__dirname + "/public"));
@@ -72,13 +70,6 @@ app.post("/api/login", function(req, res, next) {
     .catch(function(err){
       return res.status(500).json({message: "Something went wrong"});
     });
-});
-
-
-app.get("/api/users", function(req, res, next){
-  User.find({}).then(function(users){
-    return res.status(200).json({ users: users});
-  }).catch(console.log);
 });
 
 app.get("/*", function(req, res, next){
