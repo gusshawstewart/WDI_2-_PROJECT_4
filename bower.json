@@ -1,9 +1,9 @@
 {
-  "name": "transcriberAPP",
-  "description": "Final project",
+  "name": "transcriberApp",
+  "description": "Final project!",
   "main": "server.js",
   "authors": [
-    "Alex Chin"
+    "Gus Shaw Stewart"
   ],
   "license": "ISC",
   "keywords": [
