@@ -1,12 +1,16 @@
 {
-  "name": "wdiproject4",
-  "description": "ga project 4 hello",
+  "name": "transcriberAPP",
+  "description": "Final project",
   "main": "server.js",
   "authors": [
-    "Gus Shaw Stewart <g.shawstewart@gmail.com>"
+    "Alex Chin"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/gusshawstewart/WDI_2-_PROJECT_4",
+  "keywords": [
+    "Amazing"
+  ],
+  "moduleType": [],
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,6 +19,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-router": "^0.3.1"
+    "angular": "~1.5.7",
+    "angular-ui-router": "~0.3.1",
+    "angular-resource": "~1.5.7",
+    "angular-jwt": "^0.0.9"
   }
 }

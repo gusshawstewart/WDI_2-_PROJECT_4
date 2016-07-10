@@ -1,8 +1,17 @@
 {
-  "name": "wdiproject4",
+  "name": "transcriberApp",
   "version": "1.0.0",
-  "description": "ga project 4 hello",
+  "description": "How fun!",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Amazing"
+  ],
+  "author": "Gus_Shaw_Stewart",
+  "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
@@ -13,24 +22,11 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^1.2.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gusshawstewart/WDI_2-_PROJECT_4.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/gusshawstewart/WDI_2-_PROJECT_4/issues"
   },
