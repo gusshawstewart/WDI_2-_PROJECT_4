@@ -40,25 +40,26 @@ function createTranslation(request, response){
           return response.status(404).send(err);
         }
 
+        console.log(watson_res.results);
         translation.transcript = watson_res.results[0].alternatives[0].transcript;
 
         translation.save(function(error, translation){
 
           if(error) return response.status(500).json(error);
-          response.status(200).send(translation);
+          response.status(200).send(watson_res);
           console.log("saved!")
         });
       });
+
+      // streamifier.createReadStream(request.file.buffer)
+      //   .pipe(speech_to_text.createRecognizeStream({ content_type: 'audio/l16; rate=44100' }))
+      //   .pipe(fs.createWriteStream('./transcription.txt'));
 
 
 
 }
 
-// fs.createReadStream('./resources/test.wav')
-//   .pipe(speech_to_text.createRecognizeStream({ content_type: 'audio/l16; rate=44100' }))
-//   .pipe(fs.createWriteStream('./transcription.txt'));
 
-//   console.log(./transcription.txt)
 
 
 // function usersIndex(req, res){

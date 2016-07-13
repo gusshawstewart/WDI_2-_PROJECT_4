@@ -1,5 +1,12 @@
-angular.module('TranscriberApp', ['ui.router'])
-     .config(MainRouter);
+angular.module('TranscriberApp', ['ui.router' , 'file-model', 'angularAudioRecorder'])
+     .config(MainRouter)
+     .config(function (recorderServiceProvider) {
+        recorderServiceProvider
+          .forceSwf(false)
+          // .withMp3Conversion(true)
+        ;
+      });
+
 
      MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];     
 
