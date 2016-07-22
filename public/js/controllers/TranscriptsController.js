@@ -1,7 +1,7 @@
 angular.module('TranscriberApp')
 .controller('TranscriptsController', TranscriptsController);
 
-TranscriptsController.$inject = ['$http'];
+TranscriptsController.$inject = ['$https'];
 
 function TranscriptsController($http){
   var self = this;
