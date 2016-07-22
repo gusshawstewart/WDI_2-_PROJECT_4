@@ -46,17 +46,29 @@ function createTranslation(request, response){
         translation.save(function(error, translation){
 
           if(error) return response.status(500).json(error);
-          response.status(200).send(watson_res);
+          response.status(200).send(translation);
           console.log("saved!")
         });
       });
 
-      // streamifier.createReadStream(request.file.buffer)
-      //   .pipe(speech_to_text.createRecognizeStream({ content_type: 'audio/l16; rate=44100' }))
-      //   .pipe(fs.createWriteStream('./transcription.txt'));
+      streamifier.createReadStream(request.file.buffer)
+        .pipe(speech_to_text.createRecognizeStream({ content_type: 'audio/l16; rate=44100' }))
+        .pipe(fs.createWriteStream('./transcription.txt'));
 
 
 
+}
+
+function removeTranslation(request, response) {
+
+  console.log("alerted")
+  var id = request.params.id;
+
+  Translation.remove({_id: id}, function(error) {
+    if(error) response.json({message: 'Could not delete translation b/c:' + error});
+
+    response.json({message: 'Translation successfully deleted'});
+  }).select('-__v');
 }
 
 
@@ -71,5 +83,6 @@ function createTranslation(request, response){
 
 module.exports = {
   createTranslation: createTranslation,
-  getTranslation: getTranslation
+  getTranslation: getTranslation,
+  removeTranslation: removeTranslation
 }

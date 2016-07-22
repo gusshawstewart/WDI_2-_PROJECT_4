@@ -1,0 +1,16 @@
+<h1>Transcripts</h1>
+
+<section ng-controller='TranscriptsController as trans'>
+
+<ul id="transcripts">
+  <li ng-repeat="tran in trans.all" data-id="{{tran._id}}" >
+    <strong>{{tran.title}}</strong> <em ng-show="showme">{{tran.transcript}}</em> <span>{{tran.date | uppercase}}</span>
+    <a href="" ng-click="showme=true">Show</a>
+      <button ng-click="showme=false">Hide</button> 
+
+      <button class='delete' ng-click="trans.deleteTranscript(tran)">Delete</button> 
+
+  </li>
+</ul>
+
+</section>

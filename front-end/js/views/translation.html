@@ -1,0 +1,40 @@
+<h1>Transcribe</h1>
+
+<section ng-controller='TranscriptsController as trans'>
+
+<h2>Press 'Record' to start your recording. When it's finished, press 'Stop', then submit it to have Transcriber write out your notes for you!</h2>
+
+<div class="translation-options">
+<input class="record-button" type="button" ng-class="{'reactive': trans.isActive}"   ng-click="trans.startRecording(); trans.activeButton()" value="Record">
+
+<input class="stop-button" type="button" ng-class="{'recorded': trans.wasActive}" ng-click="trans.stopRecording(); trans.endRecordingAnimation()" value="Stop">
+
+<input class="stop-button" type="button" ng-click="trans.saveRecording()" value="Download recording">
+</div>
+
+
+<form class="translation-options" ng-submit="trans.addTranscript()" id="newTranscript">
+  <div>
+    <label for="newTranscript-title">Name:</label>
+    <input type="text" id="newTranscript-title" ng-model="trans.newTranscript.title" placeholder="Title">
+  </div>
+  <div>
+    <label for="newTranscript-date">Date:</label>
+    <input type="date" id="newTranscript-date" ng-model="trans.newTranscript.date" placeholder="Date">
+  </div>
+
+  <div>
+    <label for="newTranscript-transcript">or upload your own transcript:</label>
+    <div>
+    <input  type="file" accept="audio/*" capture id="newTranscript-transcript" file-model='trans.newTranscript.file' placeholder="record audio">
+    </div>
+  </div >
+<div class="translation-options" >
+    <input id="submit" type="submit" value="SUBMIT YOUR RECORDING BY CLICKING HERE!">
+    </div>
+  </div>
+</form>
+
+
+</section>
+
