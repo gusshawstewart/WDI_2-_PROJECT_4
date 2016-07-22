@@ -1,7 +1,7 @@
 angular.module('TranscriberApp')
 .controller('TranscriptsController', TranscriptsController);
 
-TranscriptsController.$inject = ['$https'];
+TranscriptsController.$inject = ['$http'];
 
 function TranscriptsController($http){
   var self = this;
@@ -100,7 +100,7 @@ self.endRecordingAnimation = function(){
   getTranscripts();
   function getTranscripts(){
     $http
-      .get('https://localhost:3000/transcripts')
+      .get('http://localhost:3000/transcripts')
       .then(function(response){
 
         self.all = response.data;
@@ -121,7 +121,7 @@ self.endRecordingAnimation = function(){
       form.append("file" , self.newTranscript.file);
       console.log(self.newTranscript.file);
       $http
-        .post('https://localhost:3000/transcripts', form, {
+        .post('http://localhost:3000/transcripts', form, {
           headers: {'Content-Type' : undefined},
           transformRequest: angular.identity
         })
@@ -138,7 +138,7 @@ self.endRecordingAnimation = function(){
     function deleteTranscript(tran){
       console.log("transcript delete attempt")
     $http
-      .delete("https://localhost:3000/transcripts/" + tran._id)
+      .delete("http://localhost:3000/transcripts/" + tran._id)
       .then(function(response){
         var index = self.all.indexOf(tran);
         self.all.splice(index, 1);
