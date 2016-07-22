@@ -5,8 +5,8 @@ var streamifier = require('streamifier');
 var Translation = require('../models/Translation');
  
 var speech_to_text = watson.speech_to_text({
-  username: '26110915-e3c3-4da9-a16a-134cb69952c0',
-  password: 'rBvYFk6PfWOE',
+  username: process.env.WATSON_USER_NAME,
+  password: process.env.WATSON_PASSWORD,
   version: 'v1'
 });
  
