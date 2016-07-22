@@ -1,0 +1,24 @@
+{
+  "name": "yearbook-authenticated",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Gus Shaw Stewart <g.shawstewart@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/gusshawstewart/WDI_2-_PROJECT_4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-file-model": "^0.3.1",
+    "angularAudioRecorder": "^1.4.1",
+    "recordrtc": "^5.3.8",
+    "recorderjs": "^0.0.0"
+  }
+}
