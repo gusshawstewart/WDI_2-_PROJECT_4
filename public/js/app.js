@@ -1,6 +1,7 @@
 angular
   .module('TranscriberApp', ['angular-jwt', 'ngResource', 'ui.router','file-model', 'angularAudioRecorder'])
-  .constant('API', 'http://localhost:3000')
+  .constant('API', '/api')
+  // .constant('API', 'https://localhost:3000')
   .config(MainRouter)
   .config(function (recorderServiceProvider) {
      recorderServiceProvider
@@ -8,8 +9,8 @@ angular
        // .withMp3Conversion(true)
      ;
    })
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptor');
+  .config(function($httpsProvider) {
+    $httpsProvider.interceptors.push('authInterceptor');
   });
 
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
