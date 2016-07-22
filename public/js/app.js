@@ -1,6 +1,6 @@
 angular
   .module('TranscriberApp', ['angular-jwt', 'ngResource', 'ui.router','file-model', 'angularAudioRecorder'])
-  .constant('API', '/api')
+  .constant('API', '/')
   // .constant('API', 'http://localhost:3000')
   .config(MainRouter)
   .config(function (recorderServiceProvider) {
